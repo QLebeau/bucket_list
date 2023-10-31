@@ -1,0 +1,31 @@
+header {
+  background-color: #A5A58C;
+
+  h1 {
+    margin-left: 100px;
+    padding-top: 20px;
+    font-family: "Consolas";
+  }
+
+  nav {
+    ul {
+      display: flex;
+      padding: 0;
+      list-style-type: none;
+      padding-bottom: 10px;
+      font-weight: bold;
+      font-family: "Consolas";
+      gap: 20px;
+      margin-left: 110px;
+
+      li {
+        a {
+          color: black;
+          text-decoration: none;
+
+        }
+      }
+    }
+
+  }
+}
