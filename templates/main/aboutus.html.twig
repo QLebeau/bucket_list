@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Équipe</h2>
+    <ul>
+        {% for teamMember in teamMembers %}
+
+                <h3>{{ teamMember.firstname }} {{ teamMember.lastname }}
+
+                    {% if teamMember.firstname == 'Fabien' %}❤️{% endif %}</h3>
+
+                <p>Date de naissance : {{ teamMember.dateOfBirth|date('d-m-Y') }}</p>
+                <p>Créateur de : {{ teamMember.creatorOf }}</p>
+
+                <img class="photo" src="{{ teamMember.picture }}" alt="{{ teamMember.firstname }} {{ teamMember.lastname }}">
+
+                <p>{{ teamMember.description }}</p>
+
+
+
+        {% endfor %}
+    </ul>
+
+    <div class="cat">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+            <div class="eye eye--left">
+                <div class="eye-pupil"></div>
+            </div>
+            <div class="eye eye--right">
+                <div class="eye-pupil"></div>
+            </div>
+            <div class="muzzle"></div>
+        </div>
+    </div>
+
+{% endblock %}

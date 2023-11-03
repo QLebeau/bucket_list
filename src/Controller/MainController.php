@@ -17,11 +17,17 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact")
+     * @Route("/aboutus", name="aboutus")
      */
-    public function contact()
+    public function about()
     {
-        return new Response("Page contact");
+        $jsonData = file_get_contents('../templates/main/team.json');
+        $decodedData = json_decode($jsonData, true);
+
+        return $this->render('main/aboutus.html.twig', [
+            'teamMembers' => $decodedData,
+        ]);
     }
+
 
 }

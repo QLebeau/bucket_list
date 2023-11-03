@@ -1,10 +1,19 @@
 {% extends 'base.html.twig' %}
 
-    {% block body %}
-        <h2>Je porte mon seau tout seul</h2>
 
-        <img src="https://media.tenor.com/RREUHsopC-cAAAAi/bucket-standing.gif"
-             alt="">
+
+    {% block body %}
+        <h2>Liste</h2>
+
+        <section>
+            {% for wish in bucketlist %}
+                <article><a class="wishlist" href="{{ path ('wish_show', {'id':wish.id}) }}"> {{ wish.title }} </a>
+                </article>
+
+
+            {% endfor %}
+        </section>
+
         <div class="cat">
             <div class="ear ear--left"></div>
             <div class="ear ear--right"></div>
@@ -20,6 +29,3 @@
         </div>
 
     {% endblock %}
-
-
-
